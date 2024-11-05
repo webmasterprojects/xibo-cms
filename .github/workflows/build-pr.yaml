@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     name: Build PR container
-    if: github.repository == 'xibosignage/xibo-cms' && github.event.review.state == 'APPROVED'
+    if: github.repository == 'webmasterprojects/xibo-cms' && github.event.review.state == 'APPROVED'
     runs-on: ubuntu-22.04
 
     permissions:
@@ -36,7 +36,7 @@ jobs:
           file: Dockerfile.ci
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          tags: ghcr.io/xibosignage/xibo-cms:test-${{ github.event.pull_request.number }}
+          tags: ghcr.io/webmasterprojects/xibo-cms
           build-args: GIT_COMMIT=${{ github.event.head.sha }}
           push: true
           load: false
