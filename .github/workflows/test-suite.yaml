@@ -68,8 +68,8 @@ jobs:
       - name: Pull
         run: |
           docker pull mysql:8
-          docker pull ghcr.io/xibosignage/xibo-xmr:latest
-          docker pull ghcr.io/xibosignage/xibo-cms:test-${{ github.event.issue.number }}
+          docker pull ghcr.io/webmasterprojects/xibo-xmr:latest
+          docker pull ghcr.io/webmasterprojects/xibo-cms:test-${{ github.event.issue.number }}
 
       - name: Run
         run: |
