@@ -13,7 +13,7 @@ on:
 jobs:
   build:
     name: Build Containers
-    if: github.repository == 'xibosignage/xibo-cms'
+    if: github.repository == 'webmasterprojects/xibo-cms'
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -52,7 +52,7 @@ jobs:
           context: .
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          tags: ghcr.io/xibosignage/xibo-cms:${{ github.ref_name }}
+          tags: ghcr.io/webmasterprojects/xibo-cms:${{ github.ref_name }}
           build-args: GIT_COMMIT=${{ github.sha }}
           push: true
           load: false
